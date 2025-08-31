@@ -3,6 +3,8 @@ import { WagmiProvider } from 'wagmi'
 import { config } from './config'
 import './App.css'
 import { WalletConnector } from './components/WalletConnctor'
+import { TotalBalance } from './components/TotalBalance'
+import { AllowUSDT } from './components/AllowUsdt'
 const queryClient = new QueryClient()
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
       <QueryClientProvider client={queryClient}>
             <div>
               <WalletConnector/>
+              <TotalBalance/>
+              <AllowUSDT/>
             </div>
       </QueryClientProvider>
     </WagmiProvider>
