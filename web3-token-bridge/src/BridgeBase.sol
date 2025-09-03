@@ -12,7 +12,7 @@ interface BHarshToken is IERC20{
 contract BridgeBase is ERC20 , Ownable{ 
     address tokenAddress;
     event Burn(address indexed burner, uint amount);
-    mapping(address=>uint) BrigedTokens
+    mapping(address=>uint) BrigedTokens;
     constructor(address _tokenAddress) Ownable(msg.sender) {
         tokenAddress=_tokenAddress;
     }
@@ -26,7 +26,7 @@ contract BridgeBase is ERC20 , Ownable{
 
     function burn (BHarshToken _tokenAddress , uint amount) public {
         require(address(_tokenAddress) == tokenAddress);
-        _tokenAddress.burn(msg.sender,amount)
+        _tokenAddress.burn(msg.sender,amount);
         emit Burn(msg.sender, _amount);
     }
     function depositHppenedonOtherSide(address owner ,uint amount)public {

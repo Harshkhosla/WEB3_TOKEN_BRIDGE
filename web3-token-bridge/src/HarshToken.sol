@@ -17,6 +17,6 @@ contract HarshToken is ERC20 , Ownable{
     }
 
     function burn (address to , uint amount) public onlyOwner{
-        _burn(to, amount)
+        _burn(to, amount);
     }
 }
